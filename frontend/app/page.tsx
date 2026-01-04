@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Mic, Square, ArrowRight, Calendar, MapPin, Sparkles } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, TargetAndTransition, VariantLabels } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 
 export default function Home() {
@@ -336,7 +336,7 @@ function IntroView({ onEnter }: { onEnter: () => void }) {
 }
 
 // Animation Helpers
-function getMainOrbAnim(state: string) {
+function getMainOrbAnim(state: string): TargetAndTransition {
   switch (state) {
     case "listening":
       return {
@@ -350,7 +350,7 @@ function getMainOrbAnim(state: string) {
         scale: 1.1,
         rotate: 360,
         filter: "blur(25px)",
-        transition: { repeat: Infinity, duration: 1, ease: "linear" }
+        transition: { repeat: Infinity, duration: 1, ease: ("linear" as const) }
       };
     case "speaking":
       return {
