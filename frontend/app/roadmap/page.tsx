@@ -37,7 +37,7 @@ export default function Roadmap() {
 
                 <div className="grid md:grid-cols-2 gap-8">
 
-                    {/* Feature 1: Discord Integration */}
+                    {/* Feature 1: Discord Native Bot */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -49,7 +49,7 @@ export default function Roadmap() {
                         </div>
                         <h3 className="text-2xl font-bold mb-4 text-slate-900">Discord Native Bot</h3>
                         <p className="text-slate-600 mb-6 leading-relaxed">
-                            Seamless integration with the community hub. Tag <span className="bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-mono text-sm">@NS_Assistant</span> directly in any channel.
+                            Seamless integration with the community hub. Tag <span className="bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-mono text-sm">@NS_Steward</span> directly in any channel.
                         </p>
                         <ul className="space-y-3">
                             <li className="flex items-start">
@@ -71,7 +71,7 @@ export default function Roadmap() {
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.4 }}
+                        transition={{ delay: 0.3 }}
                         className="bg-white/60 backdrop-blur-xl border border-white/50 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 group"
                     >
                         <div className="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -79,7 +79,7 @@ export default function Roadmap() {
                         </div>
                         <h3 className="text-2xl font-bold mb-4 text-slate-900">Deep Knowledge Engine</h3>
                         <p className="text-slate-600 mb-6 leading-relaxed">
-                            Expanding beyond logistics into education. A true tutor for the <span className="font-semibold">Learn. Earn. Burn.</span> curriculum.
+                            Expanding beyond logistics into education. A true tutor for the <span className="font-semibold">Burn, Learn, Earn</span> curriculum.
                         </p>
                         <ul className="space-y-3">
                             <li className="flex items-start">
@@ -92,7 +92,59 @@ export default function Roadmap() {
                             </li>
                             <li className="flex items-start">
                                 <BookOpen className="w-5 h-5 text-emerald-500 mr-3 mt-0.5 shrink-0" />
-                                <span className="text-slate-700"><strong>Adaptive Learning:</strong> The assistant grows smarter as more content is added to the school.</span>
+                                <span className="text-slate-700"><strong>Adaptive Learning:</strong> The Steward grows smarter as more content is added to the school.</span>
+                            </li>
+                        </ul>
+                    </motion.div>
+
+                    {/* Feature 3: Recursive Memory */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="bg-white/60 backdrop-blur-xl border border-white/50 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 group"
+                    >
+                        <div className="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <Sparkles className="w-8 h-8 text-amber-600" />
+                        </div>
+                        <h3 className="text-2xl font-bold mb-4 text-slate-900">Personalized Memory</h3>
+                        <p className="text-slate-600 mb-6 leading-relaxed">
+                            A dual-layer memory system for NS team members, allowing the LLM to provide deeply personal context over time.
+                        </p>
+                        <ul className="space-y-3">
+                            <li className="flex items-start">
+                                <Sparkles className="w-5 h-5 text-amber-500 mr-3 mt-0.5 shrink-0" />
+                                <span className="text-slate-700"><strong>Short-Term Memory:</strong> Remembers your immediate blockers, today's goals, and active conversation state.</span>
+                            </li>
+                            <li className="flex items-start">
+                                <Network className="w-5 h-5 text-amber-500 mr-3 mt-0.5 shrink-0" />
+                                <span className="text-slate-700"><strong>Long-Term Synapse:</strong> Persistent memory of skills, project history, and contributions for the whole NS community.</span>
+                            </li>
+                        </ul>
+                    </motion.div>
+
+                    {/* Feature 4: Spatial Intelligence */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.5 }}
+                        className="bg-white/60 backdrop-blur-xl border border-white/50 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 group"
+                    >
+                        <div className="w-14 h-14 bg-rose-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <Network className="w-8 h-8 text-rose-600" />
+                        </div>
+                        <h3 className="text-2xl font-bold mb-4 text-slate-900">Spatial Intelligence</h3>
+                        <p className="text-slate-600 mb-6 leading-relaxed">
+                            Using Gemini 3's multimodal perception to understand and navigate the physical Forest City campus.
+                        </p>
+                        <ul className="space-y-3">
+                            <li className="flex items-start">
+                                <Sparkles className="w-5 h-5 text-rose-500 mr-3 mt-0.5 shrink-0" />
+                                <span className="text-slate-700"><strong>Visual Grounding:</strong> Recognize campus landmarks to provide precise location-based help.</span>
+                            </li>
+                            <li className="flex items-start">
+                                <MessageSquare className="w-5 h-5 text-rose-500 mr-3 mt-0.5 shrink-0" />
+                                <span className="text-slate-700"><strong>Flyer & Poster OCR:</strong> Add events to your calendar simply by pointing your camera at school flyers.</span>
                             </li>
                         </ul>
                     </motion.div>
