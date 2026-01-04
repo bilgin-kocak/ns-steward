@@ -293,3 +293,9 @@ Our team will be checking wristbands for access to Levels 3 and 13 to keep these
 
 We’ll keep this quick and frictionless. Our Core team is always available if you need help.
 
+Jackson Steger — 14:34
+Hey @everyone . Busy day tomorrow.
+
+In addition to the burn classes at 7a, 11a, and 5p, there are 7 events on the calendar, including @Em Roblin 's Superpowers Unlocked workshop and @balajis opening talk. We'll serve lunch at coworking so you can go to both without missing a beat.
+
+A reminder: To attend Em's session, you must take the free assessment at PrinciplesYou and email a PDF of your results to em@emroblin.com

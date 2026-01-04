@@ -762,3 +762,52 @@ Melody
 
  — 22:26
 whatsapp：+60 16-252 2572, minimal 2pax
+
+Vedang — 00:14
+x402 in Dec 2025: 63 million payments. $7.5M in USDC. 1,100+ projects.
+Attachment file type: acrobat
+state-x402-2025.pdf
+873.48 KB
+Lazar — 01:26
+Dunno where to post this, but if someone from the community is in Dubai in January hit me up would love to connect and grab a coffee or cowork. I'll be here in January and then heading for NS in February ✌️
+Encrypted James 🔐 — 07:07
+Hal Finney was the first person to receive a Bitcoin transaction. It was directly from its pseudonymous creator, Satoshi Nakamoto, just two days after running Bitcoin on his computer. 
+
+10 days later, he realized he can never move those coins...
+
+The 10 BTC that Hal Finney received from Satoshi Nakamoto on January 12, 2009 has never been spent. 
+
+The output from that transaction still remains unspent on the blockchain.
+
+17 years later,  everyone is still afraid to share their "crypto"currency address online for fear that they will be tracked. 
+
+Well, unless you're using Zcash... the encrypted Bitcoin.  Learn more: ⁠Zcash.me
+
+Have a great day! 
+James
+https://zcash.me/ns 
+
+Marwan — 07:23
+was anyone else inspired by the "how to achieve your goals" event with Joey yesterday afternoon? If the Harada method is something you want to explore more on your own time, I made a super simple no-bullshit version that allows for PDF export and lets you ask for AI recommendations for any cell you need help filling in!
+https://harada-method-bransonsolutions.replit.app/
+Harada Method
+Harada Method - Identify the things that will help you reach your long-term goals!
+Kevin Lourd
+ started a thread: NS Content Studio. See all threads. — 09:48
+NS Content Studio
+1 Message ›
+Kevin Lourd
+6h ago
+Kevin Lourd — 09:50
+@Jackson Steger Who is the point of contact for any question about booking & material to record some content at the Content Studio? I would do that weekly but have no mic nor camera (nor space on my mac for heavy file manipulation )
+Nabadi — 10:00
+For anyone who has not yet had the pleasure to drop in with James, there's a very low friction (and high reward) way to start understanding what he's up to...learn by doing: 1) download a Zashi wallet from your app store, 2) then onboard with your wallet address and update your profile on his platform https://zcash.me/
+K.O. — 10:32
+Hey is anyone taking the bus to singapore rn?
+Wondering if it has taken off already
+Melody
+
+ — 10:39
+the bus leave sharply every. hour, you may need capture the 11:30 one
+Vedang — 10:46
+Prediction markets fix social media’s broken incentives by attaching real cost to being wrong: https://farcaster.xyz/vitalik.eth/0xcc87e696 
