@@ -19,6 +19,7 @@ export default function Home() {
   const recognitionRef = useRef<any>(null);
   const synthesisRef = useRef<any>(null);
   const silenceTimerRef = useRef<any>(null);
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   // Initialize Speech
   useEffect(() => {
@@ -62,10 +63,28 @@ export default function Home() {
   }, []);
 
   const startListening = () => {
+    if (synthesisRef.current) {
+      synthesisRef.current.cancel();
+    }
+    setIsSpeaking(false);
     setAnswer("");
     setTranscript("");
     setIsListening(true);
     recognitionRef.current?.start();
+  };
+
+  const stopAll = () => {
+    setIsListening(false);
+    setIsSpeaking(false);
+    setIsProcessing(false);
+    recognitionRef.current?.stop();
+    if (synthesisRef.current) {
+      synthesisRef.current.cancel();
+    }
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+    clearTimeout(silenceTimerRef.current);
   };
 
   const stopListening = () => {
@@ -83,11 +102,24 @@ export default function Home() {
     utterance.onstart = () => setIsSpeaking(true);
     utterance.onend = () => setIsSpeaking(false);
     synthesisRef.current.speak(utterance);
+
+    // Fallback cleanup in case onend doesn't fire correctly
+    setTimeout(() => {
+      if (!synthesisRef.current.speaking) {
+        setIsSpeaking(false);
+      }
+    }, 100);
   };
 
   const handleSubmit = async (text: string) => {
     if (!text) return;
     setIsProcessing(true);
+
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
 
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
@@ -95,16 +127,24 @@ export default function Home() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
+        signal: controller.signal,
       });
 
       const data = await response.json();
-      setAnswer(data.response);
-      speakText(data.response);
-    } catch (err) {
-      console.error(err);
-      setAnswer("I lost connection to the network.");
+
+      if (!controller.signal.aborted) {
+        setAnswer(data.response);
+        speakText(data.response);
+      }
+    } catch (err: any) {
+      if (err.name !== "AbortError") {
+        console.error(err);
+        setAnswer("I lost connection to the network.");
+      }
     } finally {
-      setIsProcessing(false);
+      if (!controller.signal.aborted) {
+        setIsProcessing(false);
+      }
     }
   };
 
@@ -184,7 +224,7 @@ export default function Home() {
             {/* Middle Section: The Iridescent Orb */}
             <div className="flex-1 flex items-center justify-center z-10 w-full relative min-h-[300px]">
               <div
-                onClick={isListening ? stopListening : startListening}
+                onClick={isListening || isSpeaking || isProcessing ? stopAll : startListening}
                 className="relative w-64 h-64 cursor-pointer group"
               >
                 {/* CORE ORB */}
@@ -214,18 +254,18 @@ export default function Home() {
 
               {/* Helper Text */}
               <p className="text-slate-400 text-sm font-medium mb-8 uppercase tracking-widest">
-                {isListening ? "Listening..." : "Tap to Speak"}
+                {isListening ? "Listening..." : isSpeaking ? "Speaking..." : isProcessing ? "Thinking..." : "Tap to Speak"}
               </p>
 
               {/* Floating Button (Optional/redundant with Orb tap but good for affordance) */}
               <button
-                onClick={isListening ? stopListening : startListening}
+                onClick={isListening || isSpeaking || isProcessing ? stopAll : startListening}
                 className={`
                   w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg
-                  ${isListening ? 'bg-slate-900 text-white hover:scale-105' : 'bg-white text-slate-900 border border-slate-200 hover:border-slate-300'}
+                  ${(isListening || isSpeaking || isProcessing) ? 'bg-slate-900 text-white hover:scale-105' : 'bg-white text-slate-900 border border-slate-200 hover:border-slate-300'}
                 `}
               >
-                {isListening ? <Square className="w-5 h-5 fill-current" /> : <Mic className="w-6 h-6" />}
+                {(isListening || isSpeaking || isProcessing) ? <Square className="w-5 h-5 fill-current" /> : <Mic className="w-6 h-6" />}
               </button>
             </div>
           </motion.div>
